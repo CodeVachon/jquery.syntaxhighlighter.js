@@ -1,0 +1,24 @@
+{
+    "name": "syntaxhighlighter",
+    "title": "Syntax Highlighter",
+    "description": "jQuery plugin highlighting syntac in code blocks.",
+    "keywords": [
+        "color",
+        "syntax"
+    ],
+    "version": "0.0.1",
+    "author": {
+        "name": "Christopher Vachon",
+        "email": "code@christophervachon.com",
+        "url": "http://christophervahcon.com"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/liaodrake/jquery.syntaxhighlighter.js/wiki/License"
+        }
+    ],
+    "dependencies": {
+        "jquery": ">=1.10"
+    }
+}

@@ -1,11 +1,11 @@
 {
-  "name": "",
+  "name": "jquery.syntaxhighlighter.js",
   "version": "0.0.1",
-  "description": "",
-  "homepage": "",
+  "description": "a jQuery Plugin for Syntax Highlighting",
+  "homepage": "https://github.com/liaodrake/jquery.syntaxhighlighter.js",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/liaodrake/jquery.syntaxhighlighter.js.git"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

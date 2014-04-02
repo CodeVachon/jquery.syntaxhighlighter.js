@@ -18,6 +18,11 @@ module.exports = function(grunt) {
 			}
 		}, // close jshint
 		uglify: {
+			options: {
+				banner: '/*! <%= pkg.name %> - v<%= pkg.version %> \n' +
+					'** Author: Christopher Vachon (code@christophervachon.com) \n' +
+					'** Build Date <%= grunt.template.today("yyyy-mm-dd") %> \n*/'
+			},
 			sourceFiles: {
 				files: {
 					'jquery.syntaxhighlighter.min.js': ['jquery.syntaxhighlighter.js']
