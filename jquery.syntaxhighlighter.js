@@ -1,5 +1,5 @@
 /* 
-** jquery.syntaxhighlighter.js - v0.0.1 
+** jquery.syntaxhighlighter.js - v0.0.2
 ** Author: Christopher Vachon (code@christophervachon.com) 
 ** Build Date 2014-04-02 
 ** Repository: https://github.com/liaodrake/jquery.syntaxhighlighter.js

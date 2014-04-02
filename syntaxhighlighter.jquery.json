@@ -4,9 +4,11 @@
     "description": "jQuery plugin for highlighting syntax in code blocks.",
     "keywords": [
         "color",
-        "syntax"
+        "syntax",
+        "ui",
+        "responsive"
     ],
-    "version": "0.0.1",
+    "version": "0.0.2",
     "author": {
         "name": "Christopher Vachon",
         "email": "code@christophervachon.com",
