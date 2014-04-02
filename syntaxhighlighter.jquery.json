@@ -1,7 +1,7 @@
 {
     "name": "syntaxhighlighter",
     "title": "Syntax Highlighter",
-    "description": "jQuery plugin highlighting syntac in code blocks.",
+    "description": "jQuery plugin for highlighting syntax in code blocks.",
     "keywords": [
         "color",
         "syntax"
