@@ -1,0 +1,51 @@
+code {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 0.75em;
+  background-color: #333333;
+  color: #cccccc;
+  width: 100%;
+  display: block;
+}
+table.syntax-highlighting {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 0.75em;
+  background-color: #333333;
+  color: #cccccc;
+  width: 100%;
+  margin: 1em 0;
+}
+table.syntax-highlighting tr {
+  vertical-align: top;
+}
+table.syntax-highlighting tr td {
+  padding: 1em 0.5em;
+}
+table.syntax-highlighting tr td.gutter {
+  width: 3em;
+  text-align: right;
+  color: #808080;
+  padding-right: 0.3em;
+}
+table.syntax-highlighting tr td.code {
+  overflow: auto;
+  padding: 1em 0.5em;
+  max-width: 250px;
+}
+table.syntax-highlighting tr td.code .const {
+  color: #08c;
+}
+table.syntax-highlighting tr td.code .operator {
+  color: #fff;
+}
+table.syntax-highlighting tr td.code .found {
+  color: #ff0;
+}
+table.syntax-highlighting tr td.code .comment {
+  color: #f80;
+}
+table.syntax-highlighting tr td.code .string {
+  color: #0c0;
+}
+table.syntax-highlighting tr td.code .regex {
+  color: #80f;
+}

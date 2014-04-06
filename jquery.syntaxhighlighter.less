@@ -1,0 +1,44 @@
+@code-background-color: #333;
+@code-block-color: #ccc;
+@code-gutter-color: darken(@code-block-color,30%);
+@font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+
+code {
+	font-family: @font-family-monospace;
+	font-size: 0.75em;
+	background-color: @code-background-color;
+	color: @code-block-color;
+	width: 100%;
+	display: block;
+}
+table.syntax-highlighting {
+	font-family: @font-family-monospace;
+	font-size: 0.75em;
+	background-color: @code-background-color;
+	color: @code-block-color;
+	width: 100%;
+	margin: 1em 0;
+	tr {
+		vertical-align: top;
+		td {
+			padding: 1em 0.5em;
+			&.gutter {
+				width: 3em;
+				text-align: right;
+				color: @code-gutter-color;
+				padding-right: 0.3em;
+			}
+			&.code {
+				overflow: auto;
+				padding: 1em 0.5em;
+				max-width: 250px;
+				.const { color: #08c; }
+				.operator { color: #fff; }
+				.found { color: #ff0; }
+				.comment { color: #f80; }
+				.string { color: #0c0; }
+				.regex { color: #80f; }
+			}
+		}
+	}
+}

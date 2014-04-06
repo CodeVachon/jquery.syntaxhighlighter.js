@@ -30,6 +30,13 @@ module.exports = function(grunt) {
 				}
 			}
 		}, // close uglify
+		less: {
+			build: {
+				files: {
+					"jquery.syntaxhighlighter.css": "jquery.syntaxhighlighter.less"
+				}
+			}
+		}, // close less
 		watch: {
 			gruntfile: {
 				files: ['gruntfile.js'],
@@ -38,18 +45,25 @@ module.exports = function(grunt) {
 					spawn: false
 				}
 			}, // close gruntfile
-
 			jsfiles: {
 				files: ['*.js','!gruntfile.js'],
 				tasks: ['jshint:sourceFiles','uglify:sourceFiles'],
 				options: {
 					spawn: false
 				}
-			} // close jsfiles
+			}, // close jsfiles
+			lessFile: {
+				files: ['jquery.syntaxhighlighter.less'],
+				tasks: ['less:build'],
+				options: {
+					spawn: false
+				}
+			} // close lessFile
 		} // close watch
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-less');
 }; // close module.exports

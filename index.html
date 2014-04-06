@@ -1,0 +1,45 @@
+<html>
+<head>
+	<title>jQuery Syntax Highlighter</title>
+	<style>
+		@import url('jquery.syntaxhighlighter.css');
+	</style>
+</head>
+<body>
+	<h1>jQuery Syntax Highlighter</h1>
+	<p>using this rather simple.</p>
+
+
+	<h2>Setup your HTML</h2>
+	<pre><code data-lang="html">
+&lt;pre&gt;&lt;code data-lang='html'&gt;
+	&lt;p&gt;HTML Code to Highlight&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+	</code></pre>
+
+
+	<h2>Setup your Javascript</h2>
+	<pre><code data-lang="javascript">
+$(document).ready(function() {
+	$('code').highlightSyntax();
+});
+	</code></pre>
+
+
+	<h2>Setup your CSS</h2>
+	<pre><code data-lang="css">
+table.syntax-highlighting tr td.code .const { color: #08c; }
+table.syntax-highlighting tr td.code .operator { color: #fff; }
+table.syntax-highlighting tr td.code .found { color: #ff0; }
+table.syntax-highlighting tr td.code .comment { color: #f80; }
+table.syntax-highlighting tr td.code .string { color: #0c0; }
+table.syntax-highlighting tr td.code .regex { color: #80f; }
+	</code></pre>
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="jquery.syntaxhighlighter.js"></script>
+	<script>
+		$('code').highlightSyntax();
+	</script>
+</body>
+</html>
