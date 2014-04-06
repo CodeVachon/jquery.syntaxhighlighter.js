@@ -7,15 +7,24 @@ code {
   display: block;
 }
 table.syntax-highlighting {
+  border-radius: 0.4em;
+  border: 0;
+  border-collapse: collapse;
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   font-size: 0.75em;
   background-color: #333333;
   color: #cccccc;
   width: 100%;
   margin: 1em 0;
+  overflow: hidden;
 }
 table.syntax-highlighting tr {
   vertical-align: top;
+}
+table.syntax-highlighting tr th {
+  text-align: left;
+  background-color: #666666;
+  padding: 0.3em 0.6em;
 }
 table.syntax-highlighting tr td {
   padding: 1em 0.5em;
@@ -48,4 +57,7 @@ table.syntax-highlighting tr td.code .string {
 }
 table.syntax-highlighting tr td.code .regex {
   color: #80f;
+}
+table.syntax-highlighting tr td.code .html {
+  color: #f80;
 }
