@@ -1,5 +1,5 @@
 /* 
-** jquery.syntaxhighlighter.js - v0.0.2
+** jquery.syntaxhighlighter.js - v0.0.3
 ** Author: Christopher Vachon (code@christophervachon.com) 
 ** Build Date 2014-04-02 
 ** Repository: https://github.com/liaodrake/jquery.syntaxhighlighter.js
@@ -36,42 +36,44 @@
 			}
 		}, options );
 
-		var _table = $('<table>').addClass('syntax-highlighting').append($('<tr>')
-			.append($('<td>').addClass('gutter'))
-			.append($('<td>').addClass('code'))
-		);
 
-		var _definitions = _settings.definitions.default;
+		return this.each(function() {
 
-		var _computedRegExString = "";
-		for (var k in _definitions) { _computedRegExString += _definitions[k].pattern + "|"; }
-		_computedRegExString = "(" + _computedRegExString.replace(/\|$/, "") + ")";
-		var _computedRegEx = new RegExp(_computedRegExString, "gi");
+			var _table = $('<table>').addClass('syntax-highlighting').append($('<tr>')
+				.append($('<td>').addClass('gutter'))
+				.append($('<td>').addClass('code'))
+			);
 
-		var _splitCodeRegEx = new RegExp(_settings.splitLinesRegEx, "gi");
-		var _code = $(this).html().split(_splitCodeRegEx);
-		var _numLines = (_code.length - 1);
-		//console.log(_code);
-		for (var i = 0; i <= _numLines; i++) {
-			var _hightlightedCode = _code[i].replace(/\t/g,_settings.tab);
-			_hightlightedCode = _hightlightedCode.replace(_computedRegEx, "<span class='found'>$1</span>");
-			_hightlightedCode = $('<div>').attr('data-line',i).html(_hightlightedCode || "&nbsp;");
-			_table.find('td.gutter').append($('<div>').attr('data-line',i).html(i + 1));
-			_table.find('td.code').append(_hightlightedCode);
-		}
-		_table.find('td.code .found').each(function applyHighlighting() {
-			$(this).removeClass('found').addClass(swapClassesForSyntaxHighlighting($(this),_definitions));
+			var _definitions = _settings.definitions.default;
+
+			var _computedRegExString = "";
+			for (var k in _definitions) { _computedRegExString += _definitions[k].pattern + "|"; }
+			_computedRegExString = "(" + _computedRegExString.replace(/\|$/, "") + ")";
+			var _computedRegEx = new RegExp(_computedRegExString, "gi");
+
+			var _splitCodeRegEx = new RegExp(_settings.splitLinesRegEx, "gi");
+			var _code = $(this).html().split(_splitCodeRegEx);
+			var _numLines = (_code.length - 1);
+			//console.log(_code);
+			for (var i = 0; i <= _numLines; i++) {
+				var _hightlightedCode = _code[i].replace(/\t/g,_settings.tab);
+				_hightlightedCode = _hightlightedCode.replace(_computedRegEx, "<span class='found'>$1</span>");
+				_hightlightedCode = $('<div>').attr('data-line',i).html(_hightlightedCode || "&nbsp;");
+				_table.find('td.gutter').append($('<div>').attr('data-line',i).html(i + 1));
+				_table.find('td.code').append(_hightlightedCode);
+			}
+			_table.find('td.code .found').each(function applyHighlighting() {
+				$(this).removeClass('found').addClass(swapClassesForSyntaxHighlighting($(this),_definitions));
+			});
+
+			$(this).closest('pre').replaceWith(_table);
+
+
+			_table.find('td.code div[data-line]').each(function() {
+				$(this).closest('table').find('td.gutter div[data-line="' + $(this).attr('data-line') + '"]').height($(this).height());
+			});
+
 		});
-
-		this.closest('pre').replaceWith(_table);
-
-
-		_table.find('td.code div[data-line]').each(function() {
-			$(this).closest('table').find('td.gutter div[data-line="' + $(this).attr('data-line') + '"]').height($(this).height());
-		});
-
-
-		return this;
 	};
 	function swapClassesForSyntaxHighlighting(_block,_patterns) {
 		for (var j in _patterns) {
