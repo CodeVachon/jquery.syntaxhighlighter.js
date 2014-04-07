@@ -1,0 +1,26 @@
+[
+	{
+		"class": "string",
+		"pattern": "((?:\"|')[^\"']{0,}(?:\"|'))"
+	},
+	{
+		"class": "const",
+		"pattern": "((font(?:-(?:size|family))?)|(?:(max|min)-)?(?:height|width)|display|position|vertical-align|overflow(?:-(?:x|y))?|(?:(?:(?:border|background)-)?color|border(?:-(?:radius|collapse|size))?|text-align|(padding|margin)(?:-(?:right|left|top|bottom))?)\\:)"
+	},
+	{
+		"class": "operator",
+		"pattern": "((?:[0-9\\.]{1,}(?:em|ex|%|px|pt))|0)"
+	},
+	{
+		"class": "comment",
+		"pattern": "\\/\\/[^\\(\\n|\\r)]+|\\/\\*|\\*\\/"
+	},
+	{
+		"class": "html",
+		"pattern": "(table|tr|td|th|thead|tbody|tfoot|body|div|span|section|pre|p|strong|em|u|code|h[1-6]|header|footer|aside)(?=\\.|\\s|\\:)"
+	},
+	{
+		"class": "color",
+		"pattern": "(#([0-9a-fA-F]{3}){1,2})"
+	}
+]

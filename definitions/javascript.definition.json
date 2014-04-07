@@ -1,0 +1,18 @@
+[
+	{
+		"class": "string",
+		"pattern": "((?:\"|')[^\"']{0,}(?:\"|'))"
+	}, {
+		"class": "regex",
+		"pattern": "(\\/[^\\/]+\\/[gim]{0,})"
+	}, {
+		"class": "const",
+		"pattern": "((var/s|new/s|function|private/s|if/s|else/s|for/s|in/s|document|window|ready))"
+	}, {
+		"class": "operator",
+		"pattern": "((?:[\\+\\-\\=\\!\\|\\:\\[\\]\\(\\)\\{\\}\\>\\<\\$]|&amp;|&lt;|&gt;){1,}|(?:[^\\*\\/]\\/(?!\\/|\\*)))"
+	}, {
+		"class": "comment",
+		"pattern": "\\/\\/[^\\(\\n|\\r)]+|\\/\\*|\\*\\/"
+	}
+]
