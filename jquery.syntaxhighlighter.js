@@ -13,10 +13,13 @@
 		});
 	});
 	$.fn.highlightSyntax = function( options ) {
+		console.log(document.location.pathname);
+
 		var _settings = $.extend({
 			tab: "&nbsp;&nbsp;&nbsp;&nbsp;",
 			splitLinesRegEx: "\\r\\n|\\r|\\n|<br(?:\\s\\/)?>",
 			defaultDefinition: "code",
+			definitionsPath: "/definitions/",
 			definitions: {
 				"html": [
 					{
@@ -98,16 +101,19 @@
 		return "found";
 	}
 	function getDefinitions(_definitionName,_settings) {
-
-		console.log("_definitionName: " + _definitionName);
-		console.log("_settings: " + _settings);
-
 		var _deff = $.Deferred();
 
 		if (_settings.definitions[_definitionName]) {
 			_deff.resolve(_settings.definitions[_definitionName]);
 		} else {
-			_deff.resolve(_settings.definitions[_settings.defaultDefinition]);
+			var _timestamp = new Date().getTime();
+			$.getJSON(_settings.definitionsPath + _definitionName.toLowerCase() + '.definition.json?timestamp=' + _timestamp ,function(_data) {
+				_settings.definitions[_definitionName] = _data;
+			}).fail(function() {
+				_definitionName = _settings.defaultDefinition;
+			}).always(function () {
+				_deff.resolve(_settings.definitions[_definitionName]);
+			});
 		}
 
 		return _deff.promise();

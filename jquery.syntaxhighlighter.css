@@ -61,3 +61,6 @@ table.syntax-highlighting tr td.code .regex {
 table.syntax-highlighting tr td.code .html {
   color: #f80;
 }
+table.syntax-highlighting tr td.code .color {
+  color: #0c0;
+}

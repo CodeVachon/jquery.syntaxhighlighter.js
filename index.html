@@ -28,12 +28,56 @@ $(document).ready(function() {
 
 	<h2>Setup your CSS</h2>
 	<pre><code data-lang="css">
+code {
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	font-size: 0.75em;
+	background-color: #333333;
+	color: #cccccc;
+	width: 100%;
+	display: block;
+}
+table.syntax-highlighting {
+	border-radius: 0.4em;
+	border: 0;
+	border-collapse: collapse;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	font-size: 0.75em;
+	background-color: #333333;
+	color: #cccccc;
+	width: 100%;
+	margin: 1em 0;
+	overflow: hidden;
+}
+table.syntax-highlighting tr {
+	vertical-align: top;
+}
+table.syntax-highlighting tr th {
+	text-align: left;
+	background-color: #666666;
+	padding: 0.3em 0.6em;
+}
+table.syntax-highlighting tr td {
+	padding: 1em 0.5em;
+}
+table.syntax-highlighting tr td.gutter {
+	width: 3em;
+	text-align: right;
+	color: #808080;
+	padding-right: 0.3em;
+}
+table.syntax-highlighting tr td.code {
+	overflow: auto;
+	padding: 1em 0.5em;
+	max-width: 250px; 
+}
 table.syntax-highlighting tr td.code .const { color: #08c; }
 table.syntax-highlighting tr td.code .operator { color: #fff; }
 table.syntax-highlighting tr td.code .found { color: #ff0; }
 table.syntax-highlighting tr td.code .comment { color: #f80; }
 table.syntax-highlighting tr td.code .string { color: #0c0; }
 table.syntax-highlighting tr td.code .regex { color: #80f; }
+table.syntax-highlighting tr td.code .html { color: #f80; }
+table.syntax-highlighting tr td.code .color { color: #0c0; }
 	</code></pre>
 
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
