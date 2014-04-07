@@ -5,7 +5,7 @@
 	},
 	{
 		"class": "const",
-		"pattern": "((font(?:-(?:size|family))?)|(?:(max|min)-)?(?:height|width)|display|position|vertical-align|overflow(?:-(?:x|y))?|(?:(?:(?:border|background)-)?color|border(?:-(?:radius|collapse|size))?|text-align|(padding|margin)(?:-(?:right|left|top|bottom))?)\\:)"
+		"pattern": "((?:[a-zA-Z0-9-]+)\\:)"
 	},
 	{
 		"class": "operator",
