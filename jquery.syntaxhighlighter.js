@@ -1,5 +1,5 @@
 /* 
-** jquery.syntaxhighlighter.js - v0.0.3
+** jquery.syntaxhighlighter.js - v0.0.4
 ** Author: Christopher Vachon (code@christophervachon.com) 
 ** Build Date 2014-04-02 
 ** Repository: https://github.com/liaodrake/jquery.syntaxhighlighter.js
@@ -50,7 +50,7 @@
 
 
 		return this.each(function() {
-			var _codeDefinitionTitle = $(this).attr('data-lang') || _settings.defaultDefinition;
+			var _codeDefinitionTitle = $(this).attr('data-lang') || $(this).attr("class") || _settings.defaultDefinition;
 			var _table = $('<table>').addClass('syntax-highlighting')
 				.append($('<tr>')
 					.append($('<th>').prop('colspan',2).addClass('header').text(_codeDefinitionTitle))
