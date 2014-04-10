@@ -15,7 +15,7 @@
 	$.fn.highlightSyntax = function( options ) {
 		console.log(document.location.pathname);
 
-		var _settings = $.extend({
+		var _settings = $.extend(true,{
 			tab: "&nbsp;&nbsp;&nbsp;&nbsp;",
 			splitLinesRegEx: "\\r\\n|\\r|\\n|<br(?:\\s\\/)?>",
 			defaultDefinition: "code",
