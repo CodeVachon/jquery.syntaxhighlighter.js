@@ -1,5 +1,5 @@
 /* 
-** jquery.syntaxhighlighter.js - v0.0.4
+** jquery.syntaxhighlighter.js - v0.0.5
 ** Author: Christopher Vachon (code@christophervachon.com) 
 ** Build Date 2014-04-02 
 ** Repository: https://github.com/liaodrake/jquery.syntaxhighlighter.js
@@ -51,6 +51,7 @@
 
 		return this.each(function() {
 			var _codeDefinitionTitle = $(this).attr('data-lang') || $(this).attr("class") || _settings.defaultDefinition;
+			_codeDefinitionTitle = _codeDefinitionTitle.replace("lang-","");
 			var _table = $('<table>').addClass('syntax-highlighting')
 				.append($('<tr>')
 					.append($('<th>').prop('colspan',2).addClass('header').text(_codeDefinitionTitle))
@@ -71,7 +72,7 @@
 				var _numLines = (_code.length - 1);
 				//console.log(_code);
 				for (var i = 0; i <= _numLines; i++) {
-					var _hightlightedCode = _code[i].replace(/\t/g,_settings.tab);
+					var _hightlightedCode = _code[i].replace(/\t|\s{4}/g,_settings.tab);
 					_hightlightedCode = _hightlightedCode.replace(_computedRegEx, "<span class='found'>$1</span>");
 					_hightlightedCode = $('<div>').attr('data-line',i).html(_hightlightedCode || "&nbsp;");
 					_table.find('td.gutter').append($('<div>').attr('data-line',i).html(i + 1));
